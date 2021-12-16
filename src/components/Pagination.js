@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import { PaginationContext } from "../context/Context";
+
 const Pagination = (props) => {
-    const { children, limit = 5, page } = props;
-    console.log(page);
+    const { page, limit } = useContext(PaginationContext);
+    const { children } = props;
 
     const begin = limit * (page - 1);
     const end = page * limit;

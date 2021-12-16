@@ -2,6 +2,8 @@ import StyledMaterialTable from "./styled/MaterialTable.styled";
 import Table from "./Table";
 import PageLinks from "./PageLinks";
 import { useState } from "react";
+import { TableDataContext } from "../context/Context";
+import { PaginationContext } from "../context/Context";
 
 const MaterialTable = (props) => {
     const { columns, data } = props;
@@ -12,7 +14,13 @@ const MaterialTable = (props) => {
 
     return (
         <StyledMaterialTable>
-            <Table columns={columns} data={data} page={currentPage} />
+            <TableDataContext.Provider value={{ columns: columns, data: data }}>
+                <PaginationContext.Provider
+                    value={{ page: currentPage, limit: limitPerPage }}
+                >
+                    <Table />
+                </PaginationContext.Provider>
+            </TableDataContext.Provider>
             <PageLinks pages={pages} setPage={setCurrentPage} />
         </StyledMaterialTable>
     );

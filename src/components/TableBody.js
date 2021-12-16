@@ -1,11 +1,13 @@
 import StyledTableBody from "./styled/TableBody.styled";
 import Pagination from "./Pagination";
+import { useContext } from "react";
+import { TableDataContext } from "../context/Context";
 
 const TableBody = (props) => {
-    const { data, page } = props;
+    const { data } = useContext(TableDataContext);
     return (
         <StyledTableBody>
-            <Pagination page={page}>
+            <Pagination>
                 {data.map((d) => (
                     <tr key={d.id}>
                         <td>{d.name}</td>

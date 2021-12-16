@@ -1,8 +1,10 @@
 import StyledTableHeader from "./styled/TableHeader.styled";
 import TableHeaderCell from "./TableHeaderCell";
+import { useContext } from "react";
+import { TableDataContext } from "../context/Context";
 
 const TableHeader = (props) => {
-    const { columns } = props;
+    const { columns } = useContext(TableDataContext);
     return (
         <StyledTableHeader>
             <tr>
