@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const StyledMaterialTable = styled.table`
-    border: 1px solid black;
-
-    & th {
-        border: 1px solid black;
-    }
+const StyledMaterialTable = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 export default StyledMaterialTable;

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-const StyledTableHeader = styled.thead`
-    background-color: yellow;
-`;
+const StyledTableHeader = styled.thead``;
 
 export default StyledTableHeader;
