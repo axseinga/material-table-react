@@ -3,14 +3,11 @@ import TableHeaderCell from "./TableHeaderCell";
 
 const TableHeader = (props) => {
     const { columns } = props;
-    console.log(columns);
     return (
         <StyledTableHeader>
             <tr>
                 {columns.map((c) => (
-                    <TableHeaderCell key={c}>
-                        {c[0].toUpperCase() + c.slice(1)}
-                    </TableHeaderCell>
+                    <TableHeaderCell key={c} cell={c} />
                 ))}
             </tr>
         </StyledTableHeader>
