@@ -4,6 +4,7 @@ import Navigation from "./Navigation";
 import { useEffect, useState } from "react";
 import { TableDataContext } from "../context/Context";
 import { PaginationContext } from "../context/Context";
+import { NavigationContext } from "../context/Context";
 import { handleSort } from "./helpers/sortFn";
 import { handleSearch } from "./helpers/searchFn";
 
@@ -45,12 +46,16 @@ const MaterialTable = (props) => {
                     <Table />
                 </PaginationContext.Provider>
             </TableDataContext.Provider>
-            <Navigation
-                pages={pages}
-                setPage={setCurrentPage}
-                setLimit={setLimitPerPage}
-                setSearchWord={setSearchWord}
-            />
+            <NavigationContext.Provider
+                value={{
+                    pages: pages,
+                    setPage: setCurrentPage,
+                    setLimit: setLimitPerPage,
+                    setSearchWord: setSearchWord,
+                }}
+            >
+                <Navigation />
+            </NavigationContext.Provider>
         </StyledMaterialTable>
     );
 };

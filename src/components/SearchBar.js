@@ -5,7 +5,6 @@ const SearchBar = (props) => {
     const [selectValue, setSelectValue] = useState("");
 
     const handleChange = (e) => {
-        console.log("handling change");
         setSelectValue(e.target.value);
         setSearchWord(e.target.value);
     };
