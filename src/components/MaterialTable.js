@@ -6,9 +6,9 @@ import { TableDataContext } from "../context/Context";
 import { PaginationContext } from "../context/Context";
 
 const MaterialTable = (props) => {
-    const { columns, data } = props;
+    const { columns, data, limit } = props;
     const [currentPage, setCurrentPage] = useState(1);
-    const [limitPerPage, setLimitPerPage] = useState(5);
+    const [limitPerPage, setLimitPerPage] = useState(limit);
 
     const pages = Math.ceil(data.length / limitPerPage);
 
@@ -21,7 +21,11 @@ const MaterialTable = (props) => {
                     <Table />
                 </PaginationContext.Provider>
             </TableDataContext.Provider>
-            <Navigation pages={pages} setPage={setCurrentPage} />
+            <Navigation
+                pages={pages}
+                setPage={setCurrentPage}
+                setLimit={setLimitPerPage}
+            />
         </StyledMaterialTable>
     );
 };

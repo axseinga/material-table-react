@@ -2,11 +2,12 @@ import StyledToolkit from "./styled/Toolkit.styled";
 import SearchBar from "./SearchBar";
 import LimitInput from "./LimitInput";
 
-const Toolkit = () => {
+const Toolkit = (props) => {
+    const { setLimit } = props;
     return (
         <StyledToolkit>
             <SearchBar />
-            <LimitInput />
+            <LimitInput setLimit={setLimit} />
         </StyledToolkit>
     );
 };

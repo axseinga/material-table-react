@@ -3,11 +3,11 @@ import PageLinks from "./PageLinks";
 import Toolkit from "./Toolkit";
 
 const Navigation = (props) => {
-    const { pages, setPage } = props;
+    const { pages, setPage, setLimit } = props;
     return (
         <StyledNavigation>
             <PageLinks pages={pages} setPage={setPage} />
-            <Toolkit />
+            <Toolkit setLimit={setLimit} />
         </StyledNavigation>
     );
 };
