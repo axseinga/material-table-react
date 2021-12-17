@@ -1,4 +1,4 @@
-import StyledTable from "./styled/Table";
+import StyledTable from "./styled/Table.styled";
 import TableHeader from "./TableHeader";
 import TableBody from "./TableBody";
 
