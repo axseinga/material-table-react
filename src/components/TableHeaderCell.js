@@ -5,10 +5,10 @@ const TableHeaderCell = ({ cell }) => {
     return (
         <StyledTableHeaderCell>
             {cell[0].toUpperCase() + cell.slice(1)}
-            <SortBtn>
+            <SortBtn value={"asc"} name={cell}>
                 <i className="fas fa-arrow-up"></i>
             </SortBtn>
-            <SortBtn>
+            <SortBtn value={"desc"} name={cell}>
                 <i className="fas fa-arrow-down"></i>
             </SortBtn>
         </StyledTableHeaderCell>
