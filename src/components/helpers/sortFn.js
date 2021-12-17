@@ -17,7 +17,6 @@ export const handleSort = (data, sortData) => {
         return data.sort((a, b) => b[category].localeCompare(a[category]));
     }
     if (isString === false && order === "asc") {
-        console.log("num and asc");
         return data.sort((a, b) =>
             a[category]
                 .toString()
@@ -27,7 +26,6 @@ export const handleSort = (data, sortData) => {
         );
     }
     if (isString === false && order === "desc") {
-        console.log("num and desc");
         return data.sort((a, b) =>
             b[category]
                 .toString()
