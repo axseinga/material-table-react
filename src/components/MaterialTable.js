@@ -4,6 +4,8 @@ import Navigation from "./Navigation";
 import { useEffect, useState } from "react";
 import { TableDataContext } from "../context/Context";
 import { PaginationContext } from "../context/Context";
+import { handleSort } from "./helpers/sortFn";
+import { handleSearch } from "./helpers/searchFn";
 
 const MaterialTable = (props) => {
     const { columns, data, limit } = props;
@@ -16,40 +18,13 @@ const MaterialTable = (props) => {
         order: "desc",
     });
 
-    const handleSearch = (searchWord) => {
-        const filteredData = data.filter((d) =>
-            Object.values(d).some((value) => {
-                const str = value.toString().toLowerCase();
-                return str.includes(searchWord);
-            })
-        );
-        return filteredData;
-    };
-
-    const handleSort = (sortData) => {
-        const category = sortData.category;
-        const order = sortData.order;
-        if (order === "asc") {
-            const sortedRows = rows.sort((a, b) =>
-                a[category].toString().localeCompare(b[category].toString())
-            );
-            return sortedRows;
-        }
-        if (order === "desc") {
-            const sortedRows = rows.sort((a, b) =>
-                b[category].toString().localeCompare(a[category].toString())
-            );
-            return sortedRows;
-        } else return;
-    };
-
     useEffect(() => {
-        const filteredRows = handleSearch(searchWord);
+        const filteredRows = handleSearch(data, searchWord);
         setRows(filteredRows);
     }, [searchWord]);
 
     useEffect(() => {
-        const sortedRows = handleSort(sortData);
+        const sortedRows = handleSort(rows, sortData);
         setRows(sortedRows);
     }, [sortData]);
 
