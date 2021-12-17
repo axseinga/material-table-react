@@ -51,6 +51,7 @@ const MaterialTable = (props) => {
                     pages: pages,
                     setPage: setCurrentPage,
                     setLimit: setLimitPerPage,
+                    limitPerPage: limitPerPage,
                     setSearchWord: setSearchWord,
                 }}
             >

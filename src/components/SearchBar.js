@@ -14,6 +14,7 @@ const SearchBar = (props) => {
             <input
                 name="search"
                 type="text"
+                id="search"
                 value={selectValue}
                 onChange={handleChange}
             />

@@ -5,11 +5,12 @@ import { useContext } from "react";
 import { NavigationContext } from "../context/Context";
 
 const Toolkit = () => {
-    const { setLimit, setSearchWord } = useContext(NavigationContext);
+    const { limitPerPage, setLimit, setSearchWord } =
+        useContext(NavigationContext);
     return (
         <StyledToolkit>
             <SearchBar setSearchWord={setSearchWord} />
-            <LimitInput setLimit={setLimit} />
+            <LimitInput setLimit={setLimit} limit={limitPerPage} />
         </StyledToolkit>
     );
 };
