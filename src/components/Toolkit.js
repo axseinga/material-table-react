@@ -3,10 +3,10 @@ import SearchBar from "./SearchBar";
 import LimitInput from "./LimitInput";
 
 const Toolkit = (props) => {
-    const { setLimit } = props;
+    const { setLimit, setSearchWord } = props;
     return (
         <StyledToolkit>
-            <SearchBar />
+            <SearchBar setSearchWord={setSearchWord} />
             <LimitInput setLimit={setLimit} />
         </StyledToolkit>
     );

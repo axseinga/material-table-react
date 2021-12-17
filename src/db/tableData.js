@@ -91,7 +91,7 @@ export const mcData = [
     },
     {
         name: "Chocolatey Donut",
-        category: ["dessert"],
+        category: "dessert",
         amount: "1",
         calories: 254,
         carbs: 28,
@@ -101,7 +101,7 @@ export const mcData = [
     },
     {
         name: "Chicken Legend",
-        category: ["sandwich"],
+        category: "sandwich",
         amount: "1",
         calories: 459,
         carbs: 55,
