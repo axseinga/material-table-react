@@ -71,15 +71,14 @@ describe("MaterialTable tests", () => {
         expect(links.length === 3).toBe(false);
     });
     it("check if rows are sorted by alphabetical order when user clicks sort ascending button for name column", () => {
+        expect.assertions(1);
+
         render(<MaterialTable columns={columns} data={mcData} limit={10} />);
 
         const buttonElement = screen.getAllByRole("button");
-        userEvent.click(buttonElement[0]);
+        userEvent.click(buttonElement[2]);
         const cell = screen.getAllByRole("cell");
 
-        // zadne z tych wersji nie dzialaja, nie potrafie wyszukac jak testowac zawartosc komorek, a bez tego wydaje mi sie, ze nie znajde sposobu zeby testowac sortowanie //
-
-        /*expect(cell[0].textContent.toBe("Bacon Roll"));*/
-        /*expect(cell[0].toHaveTextContent("Bacon Roll"));*/
+        expect(cell[0].textContent).toBe("Bacon Roll");
     });
 });

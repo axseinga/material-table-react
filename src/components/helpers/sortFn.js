@@ -11,10 +11,10 @@ export const handleSort = (data, sortData) => {
     const isString = checkIfString(category);
 
     if (isString === true && order === "asc") {
-        return data.sort((a, b) => a[category].localeCompare(b[category]));
+        return data.sort((a, b) => b[category].localeCompare(a[category]));
     }
     if (isString === true && order === "desc") {
-        return data.sort((a, b) => b[category].localeCompare(a[category]));
+        return data.sort((a, b) => a[category].localeCompare(b[category]));
     }
     if (isString === false && order === "asc") {
         return data.sort((a, b) =>
