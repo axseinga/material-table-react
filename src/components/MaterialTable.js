@@ -49,6 +49,7 @@ const MaterialTable = (props) => {
             </TableDataContext.Provider>
             <NavigationContext.Provider
                 value={{
+                    currentPage: currentPage,
                     pages: pages,
                     setPage: setCurrentPage,
                     setLimit: setLimitPerPage,
