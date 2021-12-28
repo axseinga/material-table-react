@@ -5,7 +5,12 @@ import { columns, mcData } from "../db/tableData";
 const MainView = () => {
     return (
         <StyledMainView>
-            <MaterialTable columns={columns} data={mcData} limit={5} />
+            <MaterialTable
+                title={"Mcdonald's calories table"}
+                columns={columns}
+                data={mcData}
+                limit={5}
+            />
         </StyledMainView>
     );
 };

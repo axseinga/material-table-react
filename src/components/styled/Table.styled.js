@@ -7,6 +7,8 @@ const StyledTable = styled.table`
     width: 80%;
     height: 80vh;
 
+    background-color: #facc74;
+
     & tr {
         border-bottom: 1px solid grey;
         width: 100%;

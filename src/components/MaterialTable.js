@@ -33,6 +33,7 @@ const MaterialTable = (props) => {
 
     return (
         <StyledMaterialTable>
+            <h1>{props.title}</h1>
             <TableDataContext.Provider
                 value={{
                     columns: columns,

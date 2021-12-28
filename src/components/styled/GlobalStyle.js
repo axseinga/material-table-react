@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import backgroundImage from "../../assets/food.png";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -7,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
 body {
     background-color: #fff;
     box-sizing: inherit;
+    background-image: url(${backgroundImage});
 }
 `;
 
