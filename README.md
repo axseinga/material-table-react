@@ -20,6 +20,11 @@ The challenge was to create a component similar to table component from [materia
 
 ### Video
 
+
+https://user-images.githubusercontent.com/46648993/152696576-1cf542b7-6a41-4d21-8e28-bdb0ac9a648f.mov
+
+
+
 ### Links
 
 -   Solution URL: [Check out my code](https://github.com/axseinga/material-table-react)
